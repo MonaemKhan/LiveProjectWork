@@ -1,7 +1,7 @@
 use Administrator;
 go
 
-create procedure admin.getCountryList
+create procedure geo.getCountryList
 as
 begin
 select id,country_name from geo.countries order by country_name;
@@ -9,7 +9,7 @@ end;
 
 go
 
-create procedure admin.getDivisionListbyCountryId
+create procedure geo.getDivisionListbyCountryId
 @countryId int
 as
 begin
@@ -18,7 +18,7 @@ end;
 
 go
 
-create procedure admin.getDivisionList
+create procedure geo.getDivisionList
 as
 begin
 select id,name+' ('+bn_name+')' from geo.divisions order by name
@@ -26,7 +26,7 @@ end;
 
 go
 
-create procedure admin.getDistricctListByDivisionId
+create procedure geo.getDistricctListByDivisionId
 @divisionId int
 as
 begin
@@ -35,16 +35,16 @@ end;
 
 go
 
-create procedure admin.getUpazilasListByDistrictId
+create procedure geo.getUpazillasListByDistrictId
 @districtId int
 as
 begin
-select id,name+' ('+bn_name+')' from geo.upazilas where district_id = @districtId order by name;
+select id,name+' ('+bn_name+')' from geo.upazillas where district_id = @districtId order by name;
 end;
 
 go
 
-create procedure admin.getUnionListByUpazillaId
+create procedure geo.getUnionListByUpazillaId
 @upazillaId int
 as
 begin

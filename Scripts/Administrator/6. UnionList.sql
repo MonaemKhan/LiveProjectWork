@@ -7,7 +7,7 @@ CREATE TABLE geo.unions (
   bn_name varchar(25) NOT NULL,
   url varchar(50) NOT NULL,
   CONSTRAINT FK_upozila_union FOREIGN KEY (upazilla_id)
-        REFERENCES geo.upazilas(id)
+        REFERENCES geo.upazillas(id)
         ON DELETE no action
         ON UPDATE no action
 );

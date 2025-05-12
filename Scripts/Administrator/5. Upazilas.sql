@@ -1,18 +1,18 @@
 use Administrator;
 go
-CREATE TABLE geo.upazilas (
+CREATE TABLE geo.upazillas (
   id int primary key NOT NULL,
   district_id int NOT NULL,
   name varchar(25) NOT NULL,
   bn_name varchar(25) NOT NULL,
   url varchar(50) NOT NULL,
-  CONSTRAINT FK_upazilas_districts FOREIGN KEY (district_id)
+  CONSTRAINT FK_upazillas_districts FOREIGN KEY (district_id)
         REFERENCES geo.districts(id)
         ON DELETE no action
         ON UPDATE no action
 );
 go
-INSERT INTO geo.upazilas (id, district_id, name, bn_name, url) VALUES
+INSERT INTO geo.upazillas (id, district_id, name, bn_name, url) VALUES
 (1, 1, 'Debidwar', N'দেবিদ্বার', 'debidwar.comilla.gov.bd'),
 (2, 1, 'Barura', N'বরুড়া', 'barura.comilla.gov.bd'),
 (3, 1, 'Brahmanpara', N'ব্রাহ্মণপাড়া', 'brahmanpara.comilla.gov.bd'),
