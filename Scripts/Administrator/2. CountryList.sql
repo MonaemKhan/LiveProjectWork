@@ -1,11 +1,14 @@
--- CREATE SCHEMA geo;
+use Administrator;
+go
+CREATE SCHEMA geo AUTHORIZATION dbo;
 
+go
 CREATE TABLE geo.countries (
     id INT PRIMARY KEY,
     country_name NVARCHAR(100),
     country_sh_name NVARCHAR(10)
 );
-
+go
 INSERT INTO geo.countries (id, country_name, country_sh_name) VALUES (1, 'Afghanistan', 'AF');
 INSERT INTO geo.countries (id, country_name, country_sh_name) VALUES (2, 'Albania', 'AL');
 INSERT INTO geo.countries (id, country_name, country_sh_name) VALUES (3, 'Algeria', 'DZ');
