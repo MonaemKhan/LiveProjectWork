@@ -72,3 +72,5 @@ TestResults/
 
 # Auto-generated files
 Generated_Code/
+/CentralAPIs/.config
+/CentralAPIs/Properties/PublishProfiles
