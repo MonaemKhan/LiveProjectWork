@@ -8,7 +8,7 @@ namespace CentralAPIs.Controllers.Administration
     [ApiController]
     public class AdminController : ControllerBase
     {
-        // GET: api/<AdminController>
+        
         [HttpGet]
         public IEnumerable<string> Get()
         {
