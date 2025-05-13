@@ -1,0 +1,86 @@
+﻿@page "/Login"
+@layout EmptyLayout
+
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>Login</PageTitle>
+
+<div class="login-container">
+    <div class="login-card">
+        <h2 class="welcome-text">Welcome to <span class="company-name">@companyName</span></h2>
+
+        <EditForm Model="@loginModel" OnValidSubmit="@HandleLogin">
+            <DataAnnotationsValidator />
+
+            <div class="form-group">
+                <label for="userId"><i class="fas fa-user"></i> User ID <span class="text-danger">*</span></label>
+                <InputText @bind-Value="loginModel.UserId" id="userId" class="form-control" placeholder="Enter User ID" />
+                <ValidationMessage For="@(() => loginModel.UserId)" class="text-danger" />
+            </div>
+
+            <div class="form-group password-group">
+                <label for="password"><i class="fas fa-lock"></i> Password <span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <InputText @bind-Value="loginModel.Password"
+                               id="password"
+                               class="form-control"
+                               type="@passwordInputType"
+                               placeholder="Enter Password" />
+                    <button type="button" class="btn btn-outline-secondary toggle-password-btn" @onclick="TogglePasswordVisibility">
+                        <i class="@eyeIconClass"></i>
+                    </button>
+                </div>
+                <ValidationMessage For="@(() => loginModel.Password)" class="text-danger" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block login-button">Login</button>
+        </EditForm>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="alert alert-danger mt-3">@message</div>
+        }
+    </div>
+</div>
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+    private string message = string.Empty;
+    private string passwordInputType = "password";
+    private string eyeIconClass = "fas fa-eye";
+    private string companyName = "MyApp";
+
+    protected override void OnInitialized()
+    {
+        companyName = _config["AppName"];
+        base.OnInitialized();
+    }
+
+    private void TogglePasswordVisibility()
+    {
+        if (passwordInputType == "password")
+        {
+            passwordInputType = "text";
+            eyeIconClass = "fas fa-eye-slash";
+        }
+        else
+        {
+            passwordInputType = "password";
+            eyeIconClass = "fas fa-eye";
+        }
+    }
+
+    private async Task HandleLogin()
+    {
+        
+    }
+
+    public class LoginModel
+    {
+        [Required(ErrorMessage = "User ID is required")]
+        public string UserId { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; } = string.Empty;
+    }
+}
