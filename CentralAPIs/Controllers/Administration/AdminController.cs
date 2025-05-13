@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CentralAPIs.CustomeActionFilter;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,8 +9,9 @@ namespace CentralAPIs.Controllers.Administration
     [ApiController]
     public class AdminController : ControllerBase
     {
-        
+
         [HttpGet]
+        [TestFilter]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
