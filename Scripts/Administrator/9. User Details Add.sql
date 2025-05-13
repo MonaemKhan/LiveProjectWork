@@ -25,7 +25,8 @@ CREATE TABLE _user.user_details (
 	make_dt NVARCHAR(11),
 	last_modify_by NVARCHAR(50),
 	last_modify_dt NVARCHAR(11),
-	project_id NVARCHAR(6)
+	project_id NVARCHAR(6),
+	user_type nvarchar(10)
 	);
 GO
 
@@ -56,7 +57,8 @@ INSERT INTO _user.user_details (
 	user_union_id,
 	STATUS,
 	make_by,
-	project_id
+	project_id,
+	user_type
 	)
 VALUES (
 	'USR001',
@@ -72,7 +74,8 @@ VALUES (
 	1000,
 	'INS',
 	'Admin',
-	'Jony'
+	'Jony',
+	'User'
 	),
 	(
 	'USR002',
@@ -88,7 +91,8 @@ VALUES (
 	1001,
 	'INS',
 	'Admin',
-	'Jony'
+	'Jony',
+	'Admin'
 	),
 	(
 	'USR003',
@@ -104,7 +108,8 @@ VALUES (
 	1002,
 	'INS',
 	'Admin',
-	'PMS'
+	'PMS',
+	'User'
 	),
 	(
 	'USR004',
@@ -120,7 +125,8 @@ VALUES (
 	1003,
 	'INS',
 	'Admin',
-	'PMS'
+	'PMS',
+	'Admin'
 	),
 	(
 	'USR005',
@@ -136,7 +142,8 @@ VALUES (
 	1004,
 	'INS',
 	'Admin',
-	'Jony'
+	'Jony',
+	'User'
 	);
 GO
 
