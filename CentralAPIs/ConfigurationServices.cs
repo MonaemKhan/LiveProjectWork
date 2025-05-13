@@ -1,7 +1,9 @@
-﻿using CentralAPIs.DBConfiguration;
+﻿using CentralAPIs.CustomeActionFilter;
+using CentralAPIs.DBConfiguration;
 using CentralAPIs.IRepo;
 using CentralAPIs.Repo;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace CentralAPIs
 {
@@ -11,7 +13,12 @@ namespace CentralAPIs
         {
             // 🔧 Register all your services here
             services.AddScoped<IUserRepo, UserRepo>();
+            services.AddScoped<ILoginRepo, LoginRepo>();
+            services.AddScoped<ISessionRepo, SessionRepo>();
 
+
+
+            services.AddScoped<ValidateToken>();
 
 
             // ✔ Register all your services here

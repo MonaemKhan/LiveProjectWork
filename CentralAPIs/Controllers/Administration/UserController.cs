@@ -1,4 +1,5 @@
-﻿using CentralAPIs.IRepo;
+﻿using CentralAPIs.CustomeActionFilter;
+using CentralAPIs.IRepo;
 using CentralModels.Administration;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,12 +19,14 @@ namespace CentralAPIs.Controllers.Administration
         }
 
         [HttpGet]
+        [Validate]
         public IEnumerable<UserDetails> Get()
         {
             return _loginRepo.getAllUserList();
         }
         [HttpGet]
         [Route("/GetDetails")]
+        [Validate]
         public IEnumerable<UserDetailsView> GetDetails()
         {
             return _loginRepo.getAllUserListView();

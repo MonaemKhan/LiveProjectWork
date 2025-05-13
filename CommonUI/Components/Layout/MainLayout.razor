@@ -4,9 +4,9 @@
 
 @inherits LayoutComponentBase
 @using Blazored.Toast
-        <div class="home-section ms-2">
-            @Body
-        </div>
+<div class="home-section ms-2">
+    @Body
+</div>
 
 <BlazoredToasts Position="ToastPosition.BottomRight"
                 Timeout="8"
@@ -27,7 +27,12 @@
 </BlazoredToasts>
 
 
-
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+    }
+}
 
 <style>
     .ToastCloseBtn {

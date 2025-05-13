@@ -2,6 +2,6 @@
 {
     internal static class GlobalVariable
     {
-        internal static string projectName = "SuperAdmin";
+        internal static string projectName = "Jony";
     }
 }

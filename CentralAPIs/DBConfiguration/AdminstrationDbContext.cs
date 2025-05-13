@@ -9,5 +9,6 @@ namespace CentralAPIs.DBConfiguration
 
         public DbSet<UserDetails> UserDetails { get; set; }
         public DbSet<UserDetailsView> UserDetailsView { get; set; }
+        public DbSet<UserSession> UserSession { get; set; }
     }
 }
