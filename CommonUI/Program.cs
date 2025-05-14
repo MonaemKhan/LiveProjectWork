@@ -4,6 +4,8 @@ using CommonUI.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var apiBaseUrl = builder.Configuration["ApiSettings:BaseUrl"];
+builder.Services.AddHttpClient("ApiClient", client => client.BaseAddress = new Uri(apiBaseUrl));
 
 //for Serversite render mode
 builder.Services.AddRazorComponents()

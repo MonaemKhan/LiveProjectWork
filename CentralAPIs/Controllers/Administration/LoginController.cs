@@ -8,7 +8,7 @@ namespace CentralAPIs.Controllers.Administration
 {
     
 
-    [Route("api/[controller]")]
+    [Route("apiV1/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -20,12 +20,12 @@ namespace CentralAPIs.Controllers.Administration
         }
     
         [HttpPost]
-        public IActionResult Post(LoginModel loginData)
+        public async Task<IActionResult> Post(LoginModel loginData)
         {
             try
             {
-                LoginResponce token = _loginRepo.loginValidation(loginData.UserId, loginData.Password, loginData.projectName);
-                return Ok(token);
+                LoginResponce data= await _loginRepo.loginValidation(loginData.UserId, loginData.Password, loginData.projectName);
+                return Ok(data);
             }catch (Exception ex)
             {
                 return BadRequest(ex.Message);

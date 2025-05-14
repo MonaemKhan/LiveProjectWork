@@ -7,29 +7,29 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CentralAPIs.Controllers.Administration
 {
-    [Route("api/[controller]")]
+    [Route("apiV1/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepo _loginRepo;
+        private readonly IUserRepo _userRepo;
 
-        public UserController(IUserRepo loginRepo)
+        public UserController(IUserRepo userRepo)
         {
-            _loginRepo = loginRepo;
+            _userRepo = userRepo;
         }
 
         [HttpGet]
         [Validate]
         public IEnumerable<UserDetails> Get()
         {
-            return _loginRepo.getAllUserList();
+            return _userRepo.getAllUserList();
         }
-        [HttpGet]
-        [Route("/GetDetails")]
+        [HttpPost]
+        [Route("GetDetails")]
         [Validate]
-        public IEnumerable<UserDetailsView> GetDetails()
+        public IEnumerable<UserDetailsView> GetDetails(UserDetailsView Data)
         {
-            return _loginRepo.getAllUserListView();
+            return _userRepo.getAllUserListView();
         }
     }
 }

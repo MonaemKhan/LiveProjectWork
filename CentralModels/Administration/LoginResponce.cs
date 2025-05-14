@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace CentralModels.Administration
 {
-    public class LoginResponce
+    public class UserInfo 
     {
-        public string userId {  get; set; }
-        public string token { get; set; }
+        public string userId { get; set; }
         public string userRole { get; set; }
         public string userName { get; set; }
+    }
+
+    public class LoginResponce
+    {
+        public UserInfo userInfo { get; set; }
+        public string token { get; set; }
     }
 }

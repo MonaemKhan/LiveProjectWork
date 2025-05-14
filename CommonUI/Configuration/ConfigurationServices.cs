@@ -1,4 +1,6 @@
-﻿namespace CommonUI.Configuration
+﻿using Solutaris.InfoWARE.ProtectedBrowserStorage.Extensions;
+
+namespace CommonUI.Configuration
 {
     public static class ConfigurationServices
     {
@@ -30,7 +32,12 @@
 
         public static void ConfigureRepositoryWrapper(this IServiceCollection services)
         {
+            services.AddScoped<HttpService>();
+            services.AddScoped<ISessionService, SessionService>();
 
+
+            services.AddServerSideBlazor();
+            services.AddIWProtectedBrowserStorage(); // ✅ Required
         }
 
         public static void ConfigureJsonNamingConvention(this IServiceCollection services)

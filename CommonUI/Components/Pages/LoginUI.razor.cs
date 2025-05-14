@@ -33,7 +33,12 @@ namespace CommonUI.Components.Pages
 
         private async Task HandleLogin()
         {
-
+            loginModel.projectName = GlobalVariable.projectName;
+            message = await _http.getLoginResponce(loginModel);
+            if (string.IsNullOrEmpty(message))
+            {
+                _nav.NavigateTo("/counter");
+            }
         }
     }
 }
