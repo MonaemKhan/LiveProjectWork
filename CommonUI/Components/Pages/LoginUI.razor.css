@@ -1,0 +1,102 @@
+﻿.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #775c94, #2d4977);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    text-align: left;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.company-name {
+    color: #2575fc;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+.form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+    .form-control:focus {
+        border-color: #2575fc;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(37, 117, 252, 0.2);
+    }
+
+.login-button {
+    background-color: #2575fc;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+    .login-button:hover {
+        background-color: #1a5edc;
+    }
+
+.text-danger {
+    font-size: 13px;
+}
+
+.alert {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+    .input-group .form-control {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+.toggle-password-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid #ccc;
+    height: 100%;
+    background-color: white;
+}
+
+    .toggle-password-btn:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
+    }

@@ -43,7 +43,6 @@ $tf/
 
 # Other files to ignore
 *.dbmdl
-*.bak
 *.orig
 *.tmp
 
